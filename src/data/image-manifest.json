@@ -1,0 +1,138 @@
+{
+  "angle-01": {
+    "width": 1080,
+    "height": 810,
+    "original": "/images/bedroom/angle-01.jpg",
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQBQCdASoYABIAPtFSo0uoJCMhsBgMAQAaCWUAvkgPKgntX/2l7v5Vpr6qggIzaQ4NOgAA/e5DKxq3a2KpBYUOeGsyl8HQhJTuPrVwvcC4R1RdYifrYWupKAoLvyq2sDxYBsFitGB6SokgBbYLm808yPBosasmWanRUIAA",
+    "avif": [
+      {
+        "w": 480,
+        "src": "/images/bedroom/optimized/angle-01-480.avif"
+      },
+      {
+        "w": 768,
+        "src": "/images/bedroom/optimized/angle-01-768.avif"
+      },
+      {
+        "w": 1080,
+        "src": "/images/bedroom/optimized/angle-01-1080.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/images/bedroom/optimized/angle-01-480.webp"
+      },
+      {
+        "w": 768,
+        "src": "/images/bedroom/optimized/angle-01-768.webp"
+      },
+      {
+        "w": 1080,
+        "src": "/images/bedroom/optimized/angle-01-1080.webp"
+      }
+    ]
+  },
+  "angle-02": {
+    "width": 1080,
+    "height": 810,
+    "original": "/images/bedroom/angle-02.jpg",
+    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABwBACdASoYABIAPtFgpk4oJaOiKAqpABoJZwDKAA9X2JT+vfjfMp25SnM3QADKJnM/YgE6vmBBeIrWXFws7PUwbm4Kw1BSwGjMkv2SLjHmyOCWIut7ZI3TvV26VEoFswBvrKKEG5TkuAXDsBIRCygpCPwfsU4A",
+    "avif": [
+      {
+        "w": 480,
+        "src": "/images/bedroom/optimized/angle-02-480.avif"
+      },
+      {
+        "w": 768,
+        "src": "/images/bedroom/optimized/angle-02-768.avif"
+      },
+      {
+        "w": 1080,
+        "src": "/images/bedroom/optimized/angle-02-1080.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/images/bedroom/optimized/angle-02-480.webp"
+      },
+      {
+        "w": 768,
+        "src": "/images/bedroom/optimized/angle-02-768.webp"
+      },
+      {
+        "w": 1080,
+        "src": "/images/bedroom/optimized/angle-02-1080.webp"
+      }
+    ]
+  },
+  "angle-03": {
+    "width": 1080,
+    "height": 810,
+    "original": "/images/bedroom/angle-03.jpg",
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBQCdASoYABIAPs1QokunpKMht/VYAPAZiWcAxNgQ6WStloVJQf4XjuCWPCUjpzxSAADcYV37/KmbNli7qL5BAZ5WzkC9U7MJKAOZ9BB8AeK68sOiP3oqxvWB42GJdG4M9n0rgrr6BBdJAwblV7qagaqeXSGVawM/DFAAAAA=",
+    "avif": [
+      {
+        "w": 480,
+        "src": "/images/bedroom/optimized/angle-03-480.avif"
+      },
+      {
+        "w": 768,
+        "src": "/images/bedroom/optimized/angle-03-768.avif"
+      },
+      {
+        "w": 1080,
+        "src": "/images/bedroom/optimized/angle-03-1080.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/images/bedroom/optimized/angle-03-480.webp"
+      },
+      {
+        "w": 768,
+        "src": "/images/bedroom/optimized/angle-03-768.webp"
+      },
+      {
+        "w": 1080,
+        "src": "/images/bedroom/optimized/angle-03-1080.webp"
+      }
+    ]
+  },
+  "angle-04": {
+    "width": 1080,
+    "height": 810,
+    "original": "/images/bedroom/angle-04.jpg",
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAACQBACdASoYABIAPtFcqU4oJSQiKAqpABoJZwC9WAyIJXfhbLYU1ntf+02vuoAA/mdge2xSLIXsOHRy7hjOjD0ehJplw5jHPvPUjqWRWKS4MZdByjZ03eFzBteRLIZdvirbbAzcHgLvfu/lIS3fDJjvdRxp5+8HkLGRiCEO+AA=",
+    "avif": [
+      {
+        "w": 480,
+        "src": "/images/bedroom/optimized/angle-04-480.avif"
+      },
+      {
+        "w": 768,
+        "src": "/images/bedroom/optimized/angle-04-768.avif"
+      },
+      {
+        "w": 1080,
+        "src": "/images/bedroom/optimized/angle-04-1080.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/images/bedroom/optimized/angle-04-480.webp"
+      },
+      {
+        "w": 768,
+        "src": "/images/bedroom/optimized/angle-04-768.webp"
+      },
+      {
+        "w": 1080,
+        "src": "/images/bedroom/optimized/angle-04-1080.webp"
+      }
+    ]
+  }
+}

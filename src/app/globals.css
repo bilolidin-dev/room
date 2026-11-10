@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+/* Phones held sideways: very little height, so layouts switch to side-by-side. */
+@custom-variant short-landscape (@media (orientation: landscape) and (max-height: 540px));
+
+@theme {
+  /* Architectural palette — warm ivory, stone, graphite, muted champagne. */
+  --color-paper: #f5f3ef;
+  --color-stone: #eae7e1;
+  --color-ink: #24231f;
+  /* Body copy on light grounds: softer than ink, still comfortably legible. */
+  --color-body: #5e5a53;
+  --color-muted: #858078;
+  --color-line: #dcd7ce;
+  --color-accent: #a18b70;
+  --color-night: #20201e;
+  --color-night-soft: #292825;
+  --color-night-deep: #1a1a18;
+
+  --font-serif: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --font-sans: "Manrope Variable", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-kerning: normal;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+
+  button {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+}
+
+@layer components {
+  /* Small uppercase caption, as in an architecture publication. */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.65625rem;
+    line-height: 1.4;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Section label: a short champagne rule followed by the caption. */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.875rem;
+    color: var(--color-accent);
+  }
+  .section-label::before {
+    content: "";
+    display: block;
+    width: 1.75rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.7;
+  }
+
+  .wordmark {
+    font-family: var(--font-serif);
+    letter-spacing: 0.42em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  /* Editorial display type: light, slightly tightened, calm line height. */
+  .display {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: -0.012em;
+    line-height: 1.04;
+  }
+
+  .lede {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    letter-spacing: 0.002em;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    min-height: 3.25rem;
+    white-space: nowrap;
+    padding: 0 2rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition:
+      background-color 0.5s var(--ease-cinematic),
+      color 0.5s var(--ease-cinematic),
+      border-color 0.5s var(--ease-cinematic);
+  }
+
+  /* Quiet text control with a hairline that draws in on hover. */
+  .text-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.4s var(--ease-cinematic), opacity 0.4s var(--ease-cinematic);
+  }
+  .text-link .text-link-label {
+    position: relative;
+    padding-bottom: 3px;
+  }
+  .text-link .text-link-label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.35;
+    transform-origin: left;
+    transition:
+      opacity 0.5s var(--ease-cinematic),
+      transform 0.6s var(--ease-cinematic);
+  }
+  .text-link:hover .text-link-label::after {
+    opacity: 0.9;
+  }
+
+  /* Navigation link: the hairline only appears on hover. */
+  .nav-link .text-link-label::after {
+    transform: scaleX(0);
+    opacity: 0.8;
+  }
+  .nav-link:hover .text-link-label::after {
+    transform: scaleX(1);
+  }
+
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    transition:
+      background-color 0.4s var(--ease-cinematic),
+      color 0.4s var(--ease-cinematic),
+      border-color 0.4s var(--ease-cinematic),
+      opacity 0.3s;
+  }
+}
+
+@keyframes hotspot-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70%,
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+.hotspot-ring {
+  animation: hotspot-pulse 2.8s var(--ease-cinematic) infinite;
+}
+
+/* Loader: falls back to a CSS-only exit if JavaScript is slow or disabled. */
+@keyframes loader-failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader-failsafe {
+  animation: loader-failsafe 0.6s ease 4.5s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hotspot-ring {
+    animation: none;
+  }
+}
+
+/* Lightbox theming (yet-another-react-lightbox) */
+.yarl__root {
+  --yarl__color_backdrop: rgba(26, 26, 24, 0.985);
+  --yarl__color_button: rgba(245, 243, 239, 0.85);
+  --yarl__color_button_active: #f5f3ef;
+  --yarl__button_filter: none;
+  --yarl__slide_title_color: #f5f3ef;
+  --yarl__slide_title_font_size: 1.5rem;
+  --yarl__slide_title_font_weight: 300;
+  --yarl__slide_description_color: rgba(245, 243, 239, 0.65);
+  --yarl__counter_color: rgba(245, 243, 239, 0.7);
+  --yarl__thumbnails_thumbnail_border: 1px solid rgba(245, 243, 239, 0.12);
+  --yarl__thumbnails_thumbnail_active_border_color: #a18b70;
+  --yarl__thumbnails_thumbnail_border_radius: 2px;
+  --yarl__thumbnails_thumbnail_background: #1a1a18;
+  --yarl__thumbnails_container_background_color: rgba(26, 26, 24, 0.985);
+}
+
+/* Keep every render fully clear of the lightbox toolbar (top) and caption (bottom). */
+.yarl__root .yarl__slide {
+  padding: 64px 0 76px;
+}
+
+/* Phones in landscape: reclaim height so the render stays as large as possible. */
+@media (orientation: landscape) and (max-height: 540px) {
+  .yarl__root .yarl__slide {
+    padding: 60px 56px 8px;
+  }
+  .yarl__root .yarl__thumbnails_container,
+  .yarl__root .yarl__slide_description_container {
+    display: none;
+  }
+}
+
+.yarl__slide_title {
+  font-family: var(--font-serif);
+}
+
+.yarl__counter {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.24em;
+}
+
+.yarl__slide_description {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
