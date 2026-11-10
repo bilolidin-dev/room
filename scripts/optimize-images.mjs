@@ -12,9 +12,10 @@
  */
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SRC_DIR = path.join(ROOT, "public/images/bedroom");
 const OUT_DIR = path.join(SRC_DIR, "optimized");
 const MANIFEST = path.join(ROOT, "src/data/image-manifest.json");
@@ -77,3 +78,20 @@ for (const file of files) {
 await fs.mkdir(path.dirname(MANIFEST), { recursive: true });
 await fs.writeFile(MANIFEST, JSON.stringify(manifest, null, 2) + "\n");
 console.log(`Manifest written: ${path.relative(ROOT, MANIFEST)}`);
+
+// Social preview image (Open Graph / Telegram / WhatsApp): 1200×630, the size
+// every network crops to. Built from the first render.
+const OG_FILE = path.join(ROOT, "public/og-image.jpg");
+await sharp(path.join(SRC_DIR, files[0]))
+  .resize(1200, 630, { fit: "cover", position: "centre" })
+  .jpeg({ quality: 86, progressive: true, mozjpeg: true })
+  .toFile(OG_FILE);
+console.log(`✓ ${path.relative(ROOT, OG_FILE)}  1200×630`);
+
+// Apple touch icon (iOS home screen / Safari): 180×180 PNG from the SVG icon.
+const APPLE_ICON = path.join(ROOT, "src/app/apple-icon.png");
+await sharp(path.join(ROOT, "src/app/icon.svg"), { density: 300 })
+  .resize(180, 180)
+  .png()
+  .toFile(APPLE_ICON);
+console.log(`✓ ${path.relative(ROOT, APPLE_ICON)}  180×180`);
